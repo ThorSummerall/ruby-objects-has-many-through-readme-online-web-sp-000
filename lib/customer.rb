@@ -10,7 +10,7 @@ class Customer
   end
 
   def save
-    self << @@all
+    @@all << self
   end
 
   def self.all
