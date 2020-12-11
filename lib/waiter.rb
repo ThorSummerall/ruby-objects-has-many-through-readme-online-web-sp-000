@@ -17,17 +17,17 @@ class Waiter
     Meal.new(self, customer, total, tip)
   end
 
-  def meals 
+  def meals
     Meal.all.select do |meal|
-      meal.waiter == self 
+      meal.waiter == self
     end
   end
 
-  def best_tipper 
+  def best_tipper
     best_tipped_meal = meals.max do |meal_a, meal_b|
-      meal_a.tip <=> meal_b.tip 
+      meal_a.tip <=> meal_b.tip
     end
 
-    best tipped_meal.customer 
+    best tipped_meal.customer
   end
 end
